@@ -1,6 +1,6 @@
 # TestPDFGen CLI
 
-TestPDFGen is a simple command-line tool built with Go to generate PDF files with specified dimensions and page counts. Each page is generated with diagonal lines and a page number, making it useful for template creation and testing.
+TestPDFGen is a simple command-line tool built with Go to generate PDF files with specified dimensions and page counts. Each page is generated with diagonal lines and a page number, making it useful for print testing.
 
 It uses the excellent `fpdf` library from `codeberg.org/go-pdf/fpdf`.
 
