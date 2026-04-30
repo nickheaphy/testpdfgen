@@ -11,7 +11,7 @@ import (
 )
 
 type Colour struct {
-    R, G, B int
+	R, G, B int
 }
 
 func main() {
@@ -54,7 +54,7 @@ func main() {
 		pdf.SetFillColor(defaultFillColour.R, defaultFillColour.G, defaultFillColour.B)
 		pdf.Rect(0, 0, *width, *height, "F")
 		// Set line width
-		pdf.SetLineWidth(0.5*scaling)
+		pdf.SetLineWidth(0.5 * scaling)
 
 		// Draw a line from top-left to bottom-right
 		pdf.Line(0, 0, *width, *height)
@@ -79,24 +79,24 @@ func main() {
 
 		// Add registration circle marks to the middle of each edge
 		pdf.SetFillColor(defaultFillColour.R, defaultFillColour.G, defaultFillColour.B)
-		o := 10.0 //circle offset from edge
-		r := 2.0*scaling //circle radius
+		o := 10.0          //circle offset from edge
+		r := 2.0 * scaling //circle radius
 		// Top edge
 		pdf.Circle(*width/2, o, r, "DF")
-		pdf.Line(*width/2-r,o,*width/2+r,o)
-		pdf.Line(*width/2,o-r,*width/2,o+r)
+		pdf.Line(*width/2-r, o, *width/2+r, o)
+		pdf.Line(*width/2, o-r, *width/2, o+r)
 		// Bottom edge
 		pdf.Circle(*width/2, *height-o, r, "DF")
-		pdf.Line(*width/2-r,*height-o,*width/2+r,*height-o)
-		pdf.Line(*width/2,*height-o-r,*width/2,*height-o+r)
+		pdf.Line(*width/2-r, *height-o, *width/2+r, *height-o)
+		pdf.Line(*width/2, *height-o-r, *width/2, *height-o+r)
 		// Left edge
 		pdf.Circle(o, *height/2, r, "DF")
-		pdf.Line(o-r,*height/2,o+r,*height/2)
-		pdf.Line(o,*height/2-r,o,*height/2+r)
+		pdf.Line(o-r, *height/2, o+r, *height/2)
+		pdf.Line(o, *height/2-r, o, *height/2+r)
 		// Right edge
-		pdf.Circle(*width-o, *height/2, r, "DF")	
+		pdf.Circle(*width-o, *height/2, r, "DF")
 		pdf.Line(*width-o-r, *height/2, *width-o+r, *height/2)
-		pdf.Line(*width-o,*height/2-r,*width-o,*height/2+r)
+		pdf.Line(*width-o, *height/2-r, *width-o, *height/2+r)
 
 		// Add the page number to the center of the circle
 		pdf.SetXY(0, *height/2-5) // Center vertically in the circle
